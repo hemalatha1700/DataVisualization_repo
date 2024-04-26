@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Embedded Content</title>
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            overflow: hidden; /* Prevents scrollbars if the content is larger than the iframe */
+            background-color: #09da48; /* Light blue background color */
+        }
+        h1 {
+            text-align: center; /* Centers the heading text */
+            margin-top: 1%; /* Gives some space at the top */
+            color: #37474f; /* Dark blue color for the text */
+            font-size: 2em; /* Adjust the size as needed */
+        }
+        .iframe-container {
+            width: 80vw; /* 60% of the viewport width */
+            height: 80vh; /* 60% of the viewport height */
+            position: absolute; /* Positioning relative to the viewport */
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%); /* Centering the iframe */
+            border: none; /* Optional: Removes the border around the iframe */
+        }
+    </style>
+</head>
+<body>
+    <h1> Task 1 - To understand the jobs with time</h1>
+    
+    <iframe class="iframe-container" src="https://vizhub.com/Pavan-CSGO/86f3ebc6f6d34559b3e064adee0b3869?mode=embed" allowfullscreen></iframe>
+</body>
+</html>
