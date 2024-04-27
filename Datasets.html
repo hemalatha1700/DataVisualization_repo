@@ -10,13 +10,12 @@
             margin: 0;
             font-family: Arial, sans-serif;
             display: flex;
-            justify-content: center;
+            
             align-items: center;
-            background: url('data_bg.jpg') no-repeat center center fixed; 
-            background-size: cover;
+            background-color: #e0f2f1; /* Light blue background color */
         }
         .button {
-            background-color: #0b0bd2;
+            background-color: #4CAF50;
             border: none;
             color: white;
             padding: 15px 32px;
@@ -36,16 +35,68 @@
             text-align: center;
             color: black; /* Changes text color to white for better contrast with the background */
         }
+        h1 {
+            color: #37474f; /* Dark blue text color for heading */
+        }
+        .logo {
+            max-width: 800px; /* Adjust the maximum width as needed */
+            height: auto;
+            margin-top: 80px; /* Adjust the margin-top to add space between the heading and the image */
+        }
+        table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+    th, td {
+        border: 1px solid black;
+        padding: 8px;
+        text-align: left;
+    }
+    th {
+        background-color: #f2f2f2;
+    }
+</style>
     </style>
     
 </head>
 <body>
-    <div class="container">
-        <h1>Analyzing the Data Science Career during Pandemic Global challenges.</h1>
-        <a href="worlddata.html" class="button">Data overview</a>
-        
-        
-        
-    </div>
+
+
+<label for="datasets">Select Dataset :</label>
+<select id="datasets" onchange="showTable()">
+  <option value="Countries Table Dataset">Countries Table Dataset</option>
+  <option value="COVID Dat  a Dataset">COVID Data Dataset</option>
+  <option value="World Data 2023 Dataset">World Data 2023 Dataset</option>
+</select>
+
+    <div id = "tableContainer" class="container"> </div>
+        <script>
+            function showTable() {
+                var selectedDataset = document.getElementById("datasets").value;
+                var tableHTML = "";
+
+                
+                switch(selectedDataset) {
+                    case "Countries Table Dataset":
+                        console.log('inside dataset 1w')
+                        tableHTML = "<h1>Countries Table Dataset</h1><table><tr><th>Column Name</th><th>Column Description</th></tr><tr><td>country</td><td>The name of the country.</td></tr><tr><td>rank</td><td>The rank of the country based on a specific metric (not specified)</td></tr><tr><td>area</td><td>Total area of the country in square kilometers.</td></tr><tr><td>landAreaKm</td><td>Land area of the country in square kilometers.</td></tr><tr><td>cca2</td><td>Two-letter country code.</td></tr><tr><td>cca3</td><td>Three-letter country code</td></tr><tr><td>netChange:</td><td>Annual net change in population (percentage).</td></tr><tr><td>growthRate:</td><td>Annual population growth rate.</td></tr><tr><td>worldPercentage:</td><td>Percentage of the world population.</td></tr><tr><td>density:</td><td>Population density per square kilometer.</td></tr><tr><td>densityMI:</td><td>Population density per square mile.</td></tr><tr><td>place:</td><td>Numeric code for the country (possibly a standard identifier).</td></tr><tr><td>pop1980 to pop2050:</td><td>Population numbers for the years 1980, 2000, 2010, 2022, 2023, 2030, and 2050.</td></tr></table>"
+                        break;
+                    case "COVID Data Dataset":
+                        tableHTML = "<h1>COVID Data Dataset </h1><table><tr><th>Column Name</th><th>Column Description</th></tr><tr><td>iso_code</td><td> ISO code for the country.</td></tr><tr><td>continent</td><td> Continent on which the country is located</td></tr><tr><td>location</td><td>Name of the country</td></tr><tr><td>Date</td><td>Date of the data record.</td></tr><tr><td>total_cases</td><td>Cumulative number of COVID-19 cases.</td></tr><tr><td>new_cases</td><td>Number of new COVID-19 cases reported on the date.</td></tr><tr><td>total_deaths</td><td>Cumulative number of COVID-19 deaths.</td></tr><tr><td>new_deaths</td><td>Number of new COVID-19 deaths reported on the date.</td></tr><tr><td>icu_patients</td><td>Number of COVID-19 patients in ICU on the date.</td></tr><tr><td>hosp_patients</td><td>Number of COVID-19 patients hospitalized on the date.</td></tr></table>";
+                        break;
+                    case "World Data 2023 Dataset":
+                        tableHTML = "<h1> World Data 2023 Dataset</h1><table><tr><th>Column Name</th><th>Column Description</th></tr><tr><td>Country:</td><td>The name of the country.</td></tr><tr><td>Density (P/Km2):</td><td>Population density per square kilometer.</td></tr><tr><td>Abbreviation:</td><td>Abbreviation or short form of the country's name.</td></tr><tr><td>Agricultural Land (%):</td><td>Percentage of land used for agriculture.</td></tr><tr><td>Land Area(Km2):</td><td>Total land area of the country in square kilometers.</td></tr><tr><td>Armed Forces size:</td><td>Size of the country's armed forces.</td></tr><tr><td>Birth Rate:</td><td>Birth rate per 1,000 people.</td></tr><tr><td>Calling Code:</td><td>International calling code for the country.</td></tr><tr><td>Capital/Major City:</td><td>Capital or a major city of the country.</td></tr><tr><td>Co2-Emissions:</td><td>Annual CO2 emissions.</td></tr><tr><td>CPI:</td><td>Consumer Price Index.</td></tr><tr><td>CPI Change (%):</td><td>Yearly change in the Consumer Price Index.</td></tr><tr><td>Currency-Code:</td><td>Currency code.</td></tr><tr><td>Fertility Rate:</td><td>Average number of children a woman will have.</td></tr><tr><td>Forested Area (%):</td><td>Percentage of land covered by forests.</td></tr><tr><td>Gasoline Price:</td><td>Price of gasoline per liter.</td></tr><tr><td>GDP:</td><td>Gross Domestic Product.</td></tr><tr><td>Gross primary education enrollment (%):</td><td>Percentage of eligible children enrolled in primary education.</td></tr><tr><td>Gross tertiary education enrollment (%):</td><td>Percentage of eligible individuals enrolled in tertiary education.</td></tr><tr><td>Infant mortality:</td><td>Infant mortality rate per 1,000 live births";
+                        break;
+                }
+            
+                
+                document.getElementById("tableContainer").innerHTML = tableHTML;
+            }
+            
+            // Show table initially with the default selected dataset
+            showTable();
+            </script>
+
+   
 </body>
 </html>
